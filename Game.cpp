@@ -27,8 +27,8 @@ void Game::Reset()
 	int brickY = 5;													//same brick dimensions on the same row
 	int spacing = 4;												//space between each brick
 
-	for (int i = 0; i < 5; i++)										//create 5 bricks
-	{
+	for (int i = 0; i < 5; i++){									//create 5 bricks
+	
 		Box newBrick;												//create one brick object
 
 		newBrick.width = brickWidth;
@@ -83,7 +83,10 @@ void Game::Render() const
 	ball.Draw();
 
 	// TODO #3 - Update render to render all bricks
-	brick.Draw();
+	for (int i = 0; i < bricks.size(); i++){						//loops through every brick in the vector
+	
+		bricks[i].Draw();											//draws the current brick
+	}
 
 	Console::Lock(false);
 }
